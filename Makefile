@@ -786,7 +786,7 @@ ECWLIB = $(ECWDIR)\lib\vc120\x64\NCSEcw.lib
 !ELSE
 ECWLIB = $(ECWDIR)\lib\vc120\win32\NCSEcw.lib
 !ENDIF
-ECWFLAGS= /DECWSDK_VERSION=$(ECWSDK_VERSION) -I$(ECWDIR)\include -I$(ECWDIR)\include\NCSECW\api -I$(ECWDIR)\include\NCSECW\jp2 -I$(ECWDIR)\include\NCSECW\ecw
+ECWFLAGS= /DECWSDK_VERSION=$(ECWSDK_VERSION) -I$(OUTPUT_DIR)\include -I$(ECWDIR)\include -I$(ECWDIR)\include\NCSECW\api -I$(ECWDIR)\include\NCSECW\jp2 -I$(ECWDIR)\include\NCSECW\ecw
 !ELSE
 ECW_DIR = libecwj2-3.3-VC12
 ECWSDK_VERSION=33
@@ -804,7 +804,7 @@ ECWLIB = $(ECWDIR)\lib\vc110\x64\NCSEcw.lib
 !ELSE
 ECWLIB = $(ECWDIR)\lib\vc110\win32\NCSEcw.lib
 !ENDIF
-ECWFLAGS= /DECWSDK_VERSION=$(ECWSDK_VERSION) -I$(ECWDIR)\include -I$(ECWDIR)\include\NCSECW\api -I$(ECWDIR)\include\NCSECW\jp2 -I$(ECWDIR)\include\NCSECW\ecw
+ECWFLAGS= /DECWSDK_VERSION=$(ECWSDK_VERSION) -I$(OUTPUT_DIR)\include -I$(ECWDIR)\include -I$(ECWDIR)\include\NCSECW\api -I$(ECWDIR)\include\NCSECW\jp2 -I$(ECWDIR)\include\NCSECW\ecw
 !ELSE
 ECW_DIR = libecwj2-3.3-VC11
 ECWSDK_VERSION=33
@@ -926,7 +926,8 @@ EXTRAFLAGS =
 
 default: update platform gdal gdalplugins gdal-csharp
 
-gdalpluginlibs: gdal-sde gdal-oci gdal-mrsid gdal-mrsid-lidar gdal-hdf4 gdal-hdf5 gdal-netcdf gdal-fits gdal-ecw gdal-ecw3 ogr-pg gdal-filegdb gdal-kea
+#gdalpluginlibs: gdal-sde gdal-oci gdal-mrsid gdal-mrsid-lidar gdal-hdf4 gdal-hdf5 gdal-netcdf gdal-fits gdal-ecw gdal-ecw3 ogr-pg gdal-filegdb gdal-kea
+gdalpluginlibs: gdal-mrsid gdal-mrsid-lidar gdal-netcdf gdal-fits gdal-ecw3 ogr-pg gdal-kea
 	
 gdalplugins: gdalpluginlibs gdalversion
 
