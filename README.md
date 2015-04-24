@@ -14,8 +14,9 @@ Makefile modifications of gisinternals/buildsystem for use in FDO 3.9 and 4.0 (f
 4. Run VS 2012 command prompt for x86 or x64
 5. cd $SDK_ROOT
 6. Run the following command:
-    * For x86: nmake gdal PLATFORM_BITS=32
-    * For x64: nmake gdal PLATFORM_BITS=64
+    * For x86: `build.bat 32`
+    * For x64: `build.bat 64`
+7. Your custom GDAL binaries and plugins will be in the `build` directory
 
 # Changes
 
